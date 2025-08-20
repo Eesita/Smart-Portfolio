@@ -1,0 +1,20 @@
+{
+  "watch": [
+    "app.js",
+    "app_local.js",
+    "public/",
+    ".env"
+  ],
+  "ignore": [
+    "node_modules/",
+    "*.log",
+    ".git/",
+    "public/img/",
+    "public/assets/"
+  ],
+  "ext": "js,json,html,css",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "delay": "1000"
+} 

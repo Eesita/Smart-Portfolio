@@ -891,4 +891,136 @@ a:hover {
   }
 }
 
+/* Skills Grid Masonry Layout */
+.skills-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.skill-card .card {
+  height: auto;
+  margin: 0;
+  display: block;
+}
+
+.skill-card .card-body {
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    column-count: 1;
+    column-gap: 1rem;
+  }
+  
+  .skill-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .skills-grid {
+    column-count: 2;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  .skills-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+  }
+}
+
+/* Experience Cards - Allow independent height */
+#experience .row {
+  align-items: flex-start !important;
+}
+
+#experience .col {
+  display: flex;
+  flex-direction: column;
+}
+
+#experience .experience-card {
+  height: auto !important;
+  min-height: 300px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#experience .experience-card .card-content {
+  flex: 1;
+}
+
+#experience .experience-card .button-container {
+  margin-top: auto;
+}
+
+/* Project Cards - Allow natural height while maintaining consistency */
+#projects .card {
+  min-height: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#projects .card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#projects .card .card-footer {
+  margin-top: auto;
+}
+
+/* Ensure collapse content doesn't affect card height calculation */
+#projects .collapse,
+#experience .collapse {
+  position: relative;
+  z-index: 10;
+}
+
+#projects .collapse.show,
+#experience .collapse.show {
+  position: relative;
+  z-index: 11;
+}
+
+/* Bootstrap Collapse Isolation */
+.collapse {
+  position: relative;
+  z-index: 1;
+}
+
+.collapse.show {
+  z-index: 2;
+}
+
+/* Ensure each card's collapse is independent */
+.card .collapse {
+  position: relative;
+}
+
+.card .collapse.show {
+  position: relative;
+}
+
+/* Prevent collapse interference */
+[data-bs-toggle="collapse"] {
+  position: relative;
+  z-index: 1;
+}
+
   

@@ -75,7 +75,7 @@ const extractResumeText = async () => {
       textContent += textContentObj.items.map((item) => item.str).join(" ");
     }
 
-    console.log("Extracted Resume Text:\n", textContent);
+    // console.log("Extracted Resume Text:\n", textContent);
     return textContent;
   } catch (error) {
     console.error("Error parsing PDF:", error);
@@ -132,6 +132,16 @@ const extractJobDetails = async (text) => {
     return "Error processing job details.";
   }
 };
+
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "healthy",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || "development"
+  });
+});
 
 app.post("/chat", async (req, res) => {
   const userMessage = req.body.message;
